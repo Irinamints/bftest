@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Game";
+}
+@model BFTEST.Models.GameModel
+
+<div class="jumbotron">
+    <h1>Guess a number game</h1>
+    <p class="lead"> Dear gamer, try to guess a number between @Model.StartRange and @Model.EndRange</p>
+    <p class="lead" id="attemptscount"> You have <span id="attemtps" style="font-weight:bold">3</span> attempts</p>
+    <p class="lead" hidden id="attemptResult"> Failed to guess</p>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        Your number:
+    </div>
+    <div class="col-6">
+        <input type="number" id="selectedNumber" />
+        <span id="selectedNumberVal" hidden>Input number</span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <button type="button" class="btn btn-default" id="btnPlay">
+            Play
+        </button>
+    </div>
+</div>
+
+<script> var userid = '@Model.UserId'</script>
